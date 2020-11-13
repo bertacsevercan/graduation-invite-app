@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.allGuests-table,
+td {
+  text-align: left;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.allGuests-table th {
+  border: 1px solid black;
+  text-align: center;
+}
