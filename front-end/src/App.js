@@ -16,6 +16,16 @@ export default function App() {
     setData(datas);
   };
 
+  const resetForm = () => {
+    setPostedData({
+      name: "",
+      surname: "",
+      email: "",
+      isComing: false
+    })
+  };
+
+
   const postData = async () => {
     const res = await fetch(`http://localhost:3000/guests`, {
       method: "POST",
@@ -32,7 +42,9 @@ export default function App() {
     const data = await res.json();
     console.log("post", data);
     setPostedData(data);
+    resetForm();
   };
+
   useEffect(() => {
     fetchData();
   }, [postedData.id]);
@@ -50,10 +62,10 @@ export default function App() {
       });
     }
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(postedData);
-    console.log(coming);
     postData();
   };
 
